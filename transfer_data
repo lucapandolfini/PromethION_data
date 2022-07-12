@@ -1,0 +1,9 @@
+if grep nanopore /etc/mtab; 
+then
+ echo "DIRECTORY MOUNTED";
+else
+ echo "DIRECTORY UNMOUNTED. Please run mount_store first:"
+ mount -t cifs -o username=nanopore_user //X.X.X.X/nanopore_store /home/prom/NANOPORE_STORE/
+fi
+rclone copy --progress --no-traverse --size-only --exclude-from=/home/prom/rclone_blacklist --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --skip-links /data/ /home/prom/NANOPORE_STORE/
+rsync -rptgoDzvhu --progress --exclude=.* --exclude-from=/home/prom/rsync_blacklist /data/ /home/prom/NANOPORE_STORE/

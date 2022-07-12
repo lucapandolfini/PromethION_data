@@ -1,0 +1,1 @@
+rclone copy --sftp-host X.X.X.X --sftp-user lpandolfini --sftp-ask-password --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --include *.fast5 --progress $1 :sftp:/work/lpandolfini/fast5/

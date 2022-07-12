@@ -1,0 +1,1 @@
+mount -t cifs -o username=nanopore_user //X.X.X.X/nanopore_store /home/prom/NANOPORE_STORE/
