@@ -78,7 +78,7 @@ Alias: **energon_pull <name_basecalled_folder>**
 
 ____
 
-# MOUNT A READ-ONLY USER
+# Mount a read-only user
 
 ```bash
 sudo mount -t cifs -o username=lpandolfini,domain=IIT.local //10.193.5.11/nanopore_store win_share
