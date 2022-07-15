@@ -11,6 +11,8 @@ Alias: **sudo mount_store**
 passwd   => 1st: Local
          => 2nd: Network Folder
 
+____
+
 ## Synchronise data (copy on remote volume)
 
 ```bash
@@ -31,6 +33,8 @@ rsync -rptgoDzvhu --progress --exclude=.* \
 
 Alias: **sudo transfer_data**
 
+____
+
 ## Detach SMB directory
 
 ```bash
@@ -38,6 +42,8 @@ umount /home/prom/NANOPORE_STORE
 ```
 
 Alias: **sudo umount_store**
+
+____
 
 ## KEEP SYNCHRONISED
 
@@ -49,6 +55,8 @@ while true; do transfer_data; sleep 2h; done
 
 Alias: **sudo keep_sync**
 
+____
+
 # Copy Fast5 files for basecalling
 
 ```bash
@@ -57,6 +65,18 @@ rclone copy --sftp-host 1.2.3.4 --sftp-user lpandolfini --sftp-ask-password --ch
 
 Alias: **energon_push </data/20220707_LSK_DIV0>**
 
+____
+
+# Copy Basecalled folder
+
+```bash
+rclone copy --sftp-host 1.2.3.4 --sftp-user lpandolfini --sftp-ask-password --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --progress :sftp:/work/lpandolfini/$1 .
+```
+
+Alias: **franklin_pull <name_basecalled_folder>**
+Alias: **energon_pull <name_basecalled_folder>**
+
+____
 
 # MOUNT A READ-ONLY USER
 
