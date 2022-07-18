@@ -1,3 +1,8 @@
+# Change bonding mode for round-robin transfer load balancing
+This doubles transfer speed while maintaining interface redundancy:
+
+Edit ```/etc/network/interfaces``` and change to ```bond-mode 0```
+
 # File synchronization commands for the PromethION
 
 ## Mount the SMB directory on the local directory
