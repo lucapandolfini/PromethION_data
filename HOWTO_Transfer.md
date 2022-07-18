@@ -3,6 +3,8 @@ This doubles transfer speed while maintaining interface redundancy:
 
 Edit ```/etc/network/interfaces``` and change to ```bond-mode 0```
 
+____
+
 # File synchronization commands for the PromethION
 
 ## Mount the SMB directory on the local directory
