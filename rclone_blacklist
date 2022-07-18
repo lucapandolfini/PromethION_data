@@ -1,0 +1,14 @@
+core-dump-db/**
+devices/**
+Install_logs/**
+intermediate/**
+mooneye/**
+network/**
+persistence/**
+pings/**
+queued_reads/**
+reads/**
+references/**
+user_scripts/**
+.system/**
+.Trash-1000/**
