@@ -15,7 +15,7 @@ ____
  
 
 ## Synchronise data (copy on remote volume)
-
+Use two-pass synch (rclone first, then rsync as a redundancy)
 ```bash
 if grep nanopore /etc/mtab; 
 then
