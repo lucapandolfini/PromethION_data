@@ -68,7 +68,7 @@ ____
 ## Copy Fast5 files for basecalling
 
 ```bash
-rclone copy --sftp-host 1.2.3.4 --sftp-user lpandolfini --sftp-ask-password --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --include *.fast5 --progress $1 :sftp:/work/lpandolfini/fast5/
+rclone copy --sftp-host 1.2.3.4 --sftp-user namesurname --sftp-ask-password --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --include *.fast5 --progress $1 :sftp:/work/lpandolfini/fast5/
 ```
 
 Alias: **energon_push </data/20220707_LSK_DIV0>**
@@ -78,7 +78,7 @@ ____
 ## Copy Basecalled folder
 
 ```bash
-rclone copy --sftp-host 1.2.3.4 --sftp-user lpandolfini --sftp-ask-password --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --progress :sftp:/work/lpandolfini/$1 .
+rclone copy --sftp-host 1.2.3.4 --sftp-user namesurname --sftp-ask-password --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --progress :sftp:/work/lpandolfini/$1 .
 ```
 
 Alias: **franklin_pull <name_basecalled_folder>**
@@ -88,5 +88,5 @@ ____
 ## Mount a read-only user
 
 ```bash
-sudo mount -t cifs -o username=lpandolfini,domain=IIT.local //10.193.5.11/nanopore_store win_share
+sudo mount -t cifs -o username=namesurname,domain=IIT.local //1.2.3.4/nanopore_store win_share
 ```
