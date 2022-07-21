@@ -68,20 +68,24 @@ ____
 ## Copy Fast5 files for basecalling
 
 ```bash
-rclone copy --sftp-host 1.2.3.4 --sftp-user namesurname --sftp-ask-password --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --include *.fast5 --progress $1 :sftp:/work/lpandolfini/fast5/
+set -e
+ssh namesurname@1.2.3.4 "mkdir /work/lpandolfini/$1"
+rclone copy --sftp-host 1.2.3.4 --sftp-user namesurname --sftp-ask-password --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --include *.fast5 --progress /data/$1 :sftp:/work/lpandolfini/$1/
 ```
 
-Alias: **energon_push </data/20220707_LSK_DIV0>**
+Alias: **energon_push <20220707_LSK_DIV0>** (absolute target name, works from any directory)
 
 ____
 
 ## Copy Basecalled folder
 
 ```bash
+ssh namesurname@1.2.3.4 "rm -rf /work/lpandolfini/$1/*.log /work/lpandolfini/$1/guppy_basecaller-core-dump-db"
 rclone copy --sftp-host 1.2.3.4 --sftp-user namesurname --sftp-ask-password --checkers 12 --transfers 12 --low-level-retries 10 --retries 5 --progress :sftp:/work/lpandolfini/$1 .
+pigz -p 20 sequencing_summary.txt
 ```
 
-Alias: **franklin_pull <name_basecalled_folder>**
+Alias: **cd destination_directory && franklin_pull <name_basecalled_folder>**
 
 ____
 
