@@ -85,7 +85,7 @@ rclone copy --sftp-host 1.2.3.4 --sftp-user namesurname --sftp-ask-password --ch
 pigz -p 20 sequencing_summary.txt
 ```
 
-Alias: **mkdir destination_dir && cd destination_dir&& energon_pull <name_basecalled_folder>**
+Alias: **mkdir destination_dir && cd destination_dir && energon_pull <name_basecalled_folder>**
 
 ____
 
