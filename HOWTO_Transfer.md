@@ -94,3 +94,11 @@ ____
 ```bash
 sudo mount -t cifs -o username=namesurname,domain=IIT.local //1.2.3.4/nanopore_store win_share
 ```
+____
+
+## Launch Basecalling
+
+```bash
+qsub -v RUNID="20220714_PCS111_Sample34" guppy6_Cdna_sup_prom.sh
+```
+
